@@ -5,7 +5,7 @@
 \usepackage{setspace}
 \usepackage{tocloft}
 
-\title{SPIE journal papers: sample manuscript showing style and formatting specifications}
+\title{Photometric \& Spectral Calibration of the Solar Ultraviolet Imaging Telescope on-board Aditya-L1}
 
 \author[a]{First Author}
 \author[a]{Second Author}
@@ -14,6 +14,16 @@
 \affil[a]{University Name, Faculty Group, Department, Street Address, City, Country, Postal Code}
 \affil[b]{Company Name, Street Address, City, Country, Postal Code}
 
+%%%%%%%%%%%%% ############# %%%%%%%%%%%
+\newcommand{\isro}{{\it ISRO}}
+\newcommand{\suit}{{\it{SUIT}}}
+\newcommand{\degree}{$^{\circ}$}
+\newcommand{\sr}[1]{{\bf\color{red} [#1]}}
+\newcommand{\dt}[1]{{\bf\color{blue} [#1]}}
+%%%%%%%%%%%%% ############  %%%%%%%%%%%
+
+
+\graphicspath{{./}{pics/}}
 \renewcommand{\cftdotsep}{\cftnodots}
 \cftpagenumbersoff{figure}
 \cftpagenumbersoff{table} 
@@ -30,7 +40,221 @@ This document shows the required format and appearance of a manuscript prepared 
 % Include email contact information for corresponding author
 {\noindent \footnotesize\textbf{*}Fourth author name,  \linkable{myemail@university.edu} }
 
-\begin{spacing}{2}   % use double spacing for rest of manuscript
+%\begin{spacing}{2}   % use double spacing for rest of manuscript
+
+%xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:intro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an instrument on-board Aditya{--}L1 mission \cite{adityal1,aditya} of the Indian Space Research Organization (ISRO) launched on September 2, 2023, that would measure the solar radiation in the near ultraviolet range (200{--}400 nm). \suit~ with its 11 science filters (3 broadband and 8 narrowband) will have the capability to probe different heights of solar atmosphere in photosphere and chromosphere, to help us understand the different processes that transport mass and energy from one layer to another. \suit~ will provide full disk as well as partial disk images of the Sun with a pixel size of 0.7".
+
+\noindent With \suit~ imaging we would be able to resolve solar flares spatially on the surface of the Sun, in near ultra-violet (NUV), which will help us to address the questions regarding their build-up and triggering mechanism. In addition, to measure the spatially resolved solar spectral irradiance within the wavelength range that is central for the study the Chemistry of oxygen and ozone in the stratosphere of Earth's atmosphere. \suit~has two main sub-units - the optical bench and the payload electronics. The optical bench consists of two mirror off axis telescope. The main components of the telescope are entrance-door mechanism, thermal filter, primary and secondary mirrors, shutter mechanism, baffles, filter wheel assembly, focusing mechanism and the focal plane assembly. Fig \ref{fig:suit} shows a schematic diagram of the payload.
+
+%------------------------------------------------------------
+\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=0.8\linewidth]{SUITLayout.jpg}
+\end{tabular}
+\end{center}
+\caption 
+{ \label{fig:suit} A schematic diagram of \suit~payload with various components as labeled. } 
+\end{figure} 
+%-----------------------------------------------------------
+
+\noindent The filter wheel assembly consists of two filter wheels, which accommodate 11 science filters and 3 bandpass filters. The bandpass filters are designed to balance the fluxes at the detector in different bands, to keep it within the dynamic range. This is necessary as the Solar flux increases by almost a factor of 20 in the wavelength range of 200{--}400 nm, shown in Fig. \ref{fig:sun_spec} taken from \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The two filter wheels can be rotated independently to achieve the desired filter combination. Table \ref{tab:science_filters} gives the details of all 11 science filters and the combination filters required for optimum throughput.
+
+%-----------------------------------------------------------
+\begin{table*}[ht]
+\caption{List of science filters on board \suit. The columns from left to right denote: filter abbreviations, central wavelengths for science filters, corresponding  and the science target of the band.} 
+\label{tab:science_filters}
+\begin{center}
+\begin{tabular}{||l|c|c|c|r||}
+\hline
+Science  &	Combination &	Central		      & 		Bandpass 		& Science \\
+Filter	&	Filter     &	Wavelength  (nm)	&		(nm)		    &	target		\\
+\hline
+NB1     & BB1 		& 214.0 		    & 11.0 				& Continuum\\
+NB2 	& CF1		& 276.7				& 0.4 				& Mg~\rm{II}~k blue wing \\
+NB3 	& CF1		& 279.6 			& 0.4 				& Mg~\rm{II}~k\\
+NB4 	& CF1		& 280.3				& 0.4 				& Mg~\rm{II}~h\\
+NB5		& CF1		& 283.2				& 0.4 				& Mg~\rm{II}~h red wing\\
+NB6 	& CF2		& 300.0 			&1.0 				& Continuum\\
+NB7 	& CF2		& 388.0				&1.0 				& Continuum\\
+NB8		& NB8		& 396.85 			& 0.1 				& Ca~\rm{II}~h\\
+BB1 	& BB1		& 220.0				& 40.0 				& Herzberg Continuum \\
+BB2 	& CF3		& 277.0 			& 58.0              & Hartley Band\\
+BB3 	& CF3		& 340.0				& 40.0              & Huggins Band\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+%-----------------------------------------------------------
+
+%------------------------------------------------------------
+\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=0.8\linewidth]{spectrum_sun.eps}
+\end{tabular}
+\end{center}
+\caption 
+{ \label{fig:sun_spec} The Solar spectra from the \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The Inset plot shows the wavelength range in which \suit~is going to observe the Sun, showing the dramatic rise of the spectra in that wavelength band.} 
+\end{figure} 
+%-----------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experimental Setup}\label{sec:setup}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The photometric test and calibration called for an elaborate setup which requires the input of a measured amout of light into the payload within a known band of wavelength. This called for a monochromator to generate monochromatic light within a certain band of wavelength, a collimator to feed the monochromatic light into the payload and a vacuum chamber to operate the payload by simulating space like conditions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=0.8\linewidth]{experimental_setup}
+\end{tabular}
+\end{center}
+\caption 
+{ \label{fig:experimentalsetup} Experimental Setup for photometric and spectral calibration of the SUIT payload.} 
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\subsection{SUIT Collimator}		
+The Sun acts as a collimated light source which SUIT is designed to observe. Therefore, collimated light must be fed into the telescope for testing and calibration. Also, the light should lie in the UV band, and the wavefront error should at least be as good as the SUIT payload. For these reasons, SUIT's qualification model (QM) passes as a viable choice for being a collimator. The SUIT QM, used as the collimator, functions in the opposite sense of the SUIT payload. Instead of collimated light being fed from the front aperture, a converging beam of light is fed from the detector side of the collimator. Light from any object kept at the  CCD plane of the collimator emerges collimated beyond the primary mirror. This collimated beam of light is then fed into the SUIT telescope, and imaging is performed with the SUIT CCD.
+	
+The SUIT collimator exhibits a wavefront error $\sim 37.2$ nm with a computed Strehl Ratio of 0.87. The zernike coefficients of the collimator are tabulated in Table \ref{table: zernikes}.
+It is mounted on an optical table such that the front aperture is aligned with the view port of the vacuum chamber housing the SUIT payload. The optical bench is designed to rest on six pods bolted to the optical table. The pods are mounted on the optical table, and the optical bench is placed over them. A feeler gauge measures any non-planarity between the bench and the pods. Any gaps above 25 microns are filled with shims of appropriate thicknesses. All the bolts fastening the bench and the pods are uniformly torqued to 400 Ncm. A small flat mirror is attached to the rear surface of the SUIT primary mirror. A theodolite is used to autocollimate to the back of the primary mirror, and the reference is used to set the optical axis of a plane mirror placed in front of the aperture of the collimator. An f/25 transmission sphere is used to focus light at the focal plane of the collimator. The interferometer is tilted by 2.64 degrees with respect to the SUIT optical axis to align it with the secondary mirror arm of the collimator. The tilt is verified with an autocollimator, and the beam is fed along the chief ray. The light emerges collimated from the front aperture and is retro-reflected back by the flat mirror into the collimator. The interferogram is recorded, and the RMS wavefront error is used as a reference to determine if any unwanted stress is passed on to the payload bench. In any warping, the RMS wavefront error is expected to deviate from 37.2 nm grossly. The telescope is of RC design, causing the wavefront error to change grossly in case of misalignment.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table*}[ht]
+\caption{Aberrations derived from Zernike coefficients after alignment of SUIT FM and QM.}
+\label{table: zernikes}
+    \begin{center}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Aberration} & \textbf{FM (nm)} & \textbf{QM (nm)}\\
+				\hline
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{RMS} & 34 & 41.4 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{PVr} & 196.4 & 210.3 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Power} & 25 & -4.4 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Astig X} & -32.7 & 36.7 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Astig Y} & 22.8 & 0.88 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Coma X} & -30.8 & -63.3 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Coma Y} & -9.9 & 28.8 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Primary Spherical} & -19.8 & -18.8 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Trefoil X} & -13.9 & -40.4 \\
+				\hline
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Trefoil Y }& -17.3 & -19.3 \\
+				\hline
+			\end{tabular}
+		\end{center}
+	\end{table*} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\subsection{Co-alignment of optical bench and collimator}
+	Light emerging through the collimator's clear aperture must be fed completely into the payload to avoid any loss of light. Therefore, the collimator and payload have to be aligned intricately.
+	
+	The collimator is mounted on the optical bench, and the payload is loaded in the vacuum chamber. 
+	
+	A small mirror mounted behind the collimator primary mirror is sighted and autocollimated with a theodolite. This is used to align the theodolite with the optical axis of the collimator.
+	
+	The theodolite is laterally shifted while maintaining auto-collimation with a repeater mirror, and a both sided mirror is sighted with the theodolite.
+	
+	The tilt of the mirror is so adjusted as to achieve auto-collimation. This aligns the mirror with the optical axis of the theodolite. 
+	
+	The theodolite is shifted to the opposite side and autocollimated with the back of the double sided mirror.
+	
+	Maintaining autocollimation with a repeater mirror, the theodolite is laterally shifted, and the alignment cube of the payload is sighted within the vacuum chamber. The payload is moved within the play of the bolt holes to achieve auto-collimation with the theodolite.
+	
+	This ensures that the payload is optically aligned with the collimator.
+	
+	An interferometer is used with a f/3.5 transmission sphere to overfill the mirrors of SUIT. The interferometer beam is fed along the optical axis of the payload, which is retroreflected back from a flat mirror. The return beam passes through the SUIT optics and reaches the interferometer, which gives the  interferogram. Repeated interferograms are taken, and the fringes are constantly monitored. The interferometer is moved along the z-axis till the fringes appear straight instead of circular, indicating nullification of the power. The point of convergence of the beam from the interferometer is the focal point of the collimator. Light from any target kept at that location will emerge collimated from the front aperture of the collimator. 
+	
+	A 5 micron pinhole is mounted on an x-y-z micrometer stage and introduced at the converging beam's face. A camera is used to see the light emerging from the pinhole as the intensity is maximum while decaying rapidly with small change in position when the pinhole is aligned with the point of convergence of the beam. This marks the on-axis focal point of the pinhole and the x-y plane of movement of the pinhole defines the focal plane.
+	
+	
+	\subsection{Payload}
+	The SUIT CCD needs to be cooled at -55 deg C for reliable operation. In space, this is achieved by a radiator plate and a cold finger, which passively cools the CCD by radiating the heat in a direction away from the Sun. However, cooling the CCD to that extent in the atmosphere shall cause deposition of water vapour and other contaminants on the CCD surface. Therefore, the payload is cooled in a high vacuum environment of the order of $10^{-6}$ mbar in a 0.7 m custom-made vacuum chamber. Cooling is achieved by closed-loop microdosing of liquid nitrogen through a cooling jacket mounted on the cold finger instead of the radiator plate.
+	
+	Extreme cooling of the CCD poses the threat of molecular contaminant deposition on the CCD surface. The level of contamination in the vacuum chamber is verified with a Temperature Controlled Quartz Crystal Microbalance (TQCM). SUIT operates in the NUV band of light, making it very sensitive to particulate and molecular contamination which can reduce the throughput of the instrument due to scattering of NUV light. To mitigate these issues, the payload is assembled and operated in a Class 100 clean room before loading it in the vacuum chamber.
+	
+	To remove any contaminants inside the vacuum chamber, it is thoroughly wiped with isopropyl alcohol and the vacuum chamber is baked at  $70^\circ C$ for 24 hours. Upon reaching room temperature, TQCM verification of the chamber is done, keeping the crystal at a temperature of -10 deg C. Any residual contaminant shall get condensed on the TQCM, thus changing the crystal's resonant frequency. The rate of change of frequency gives a measure of the amount of contaminant in the chamber. For SUIT, a TQCM count of $\leq 3 Hz/hr$ over a period of 24 hours was considered satisfactory. However, $\leq 2 Hz/hr$ was achieved in practice.
+	
+	The SUIT payload was tested following vibration, acoustic and thermovacuum qualification tests. This required the payload to be transported to various clean rooms and labs. While required contamination control protocols were followed during transportation and the tests, it was considered necessary to subject the payload to a bakeout at $40 ^\circ C$ for 36 hours before cooling the CCD and beginning imaging tests. Post baking, the payload was allowed to cool down to room temperature and TQCM verification was performed. The TQCM count was seen to be $< 3 Hz/hr$ after 24 hours of verification, following which the CCD was cooled.
+	
+	\subsection{Monochromator configuration and calibration}
+	An Andor Shamrock 500i spectroscope/ monochromator is used for this purpose. An optical fiber picks up the light from the exit slit of the monochromator and feeds it to the focal plane of the SUIT collimator. The optical fiber bundle is linear in nature, with 19 fibers of 0.2mm thickness arranged in a linear array. This acts like an exit slit with a thickness of 0.2 mm. A Hg2 (Mercury) lamp is used for wavelength calibration of the monochromator. The central wavelength of a relatively isolated spectral line is set on the monochromator, and the optical fiber is mounted. The exit end of the fiber is attached to a photodiode to measure the intensity of the exiting light. Using a micrometer actuator, the input slit of the optical fiber is moved horizontally. The brightness is seen to increase and then starts decreasing, indicating the position of central wavelength. At this position, the fiber is moved vertically to ensure the light arrives at most fibers of the bundle. The brightness is seen to increase and then decrease, indicating the point of maximum brightness to be the optimized position of the fiber slit. This calibrates the fiber to pick up the same wavelength of light as is chosen in the monochromator software. Now, the monochromator is set to another fairly isolated line within the 200-400 nm band and it is noticed that the intensity of light exiting the fiber is maximum at the set position of the slit. This ensures no variation of position with wavelength for the monochromator, and the optical fiber calibration is valid throughout the working wavelength.
+	
+	\section{Photometric Calibration}
+	Photometric calibration is performed to understand the instrument response to a standard flux of incoming light. This is necessary to quantify the flux of a solar feature from the counts recorded on the SUIT CCD. In this test, an optical fiber is used to feed light from a monochromator at the focal plane of the SUIT collimator. The monochromator uses a 1200 lpmm grating with a nominal dispersion of 1.44 nm/mm. The spectral resolution of the monochromator depends on the entrance slit or the exit slit, whichever is geometrically bigger. In our case, an entrance slit width of 3 mm is used to maximize the light output from the spectrograph. Thus, the emergent monochromatic light has a wavelength band of $3\times 1.44 = 4.32 nm$. The wavelength band is chosen to accommodate the complete transmission spectrum of the narrowband science filter being tested. Light from the exit slit of the spectrograph is carried by an optical fiber. The collecting area of the fiber is slit-like, with a thickness of 200 microns. The fiber terminates as a circular bundle, which is kept at the focal plane of the SUIT collimator and acts as the target for SUIT.
+	
+	A NIST calibrated photodiode is kept at the exit aperture of the collimator. The wavelengths of the spectrograph and photodiode are set based on the science filter being tested. It is seen that the Xenon lamp spectrum does not change rapidly within 4.32 nm and can be assumed to be flat. Therefore, the output flux measured with the photodiode (in $Wm^{-2}$) can be divided by the wavelength band from the spectrograph to get the spectral flux from the collimator (in $W m^{-2} nm$). Also, the incoming wavelength band is wide enough to accommodate the entire transmission spectrum of the narrowband science filters (typically $< 1~nm$ FWHM). Therefore, the wavelength band incident from the monochromator is sufficient to perform the photometric test with the SUIT payload.
+		
+	In parallel, the SUIT telescope response has been determined based on the solar spectral irradiance and the throughput of each sub-assembly of the telescope. The experimentally determined throughput is compared with this simulated throughput to check the coherence of the experimental and simulated results. This is necessary to decide the exposure times for the SUIT payload in the 11 science bandpasses at various modes of operation.
+	
+	\section{Spectral Calibration}
+	
+	The purpose of Spectral calibration is to verify the wavelength transmission profile of the SUIT payload with various science filters. For spectral calibration, a holographic grating of 2400 lpmm was used, blazed at 220 nm wavelength. The nominal dispersion of this grating is 0.74 nm/mm. The entrance slit width is set at 200 microns. Therefore, the wavelength bin being fed into SUIT is $(0.74 nm/mm \times 0.2 mm= 0.148 nm)$ nm. Readings are taken across the transmission spectrum of the science filter without any spectral overlap to keep adjacent readings independent of each other. The total energy is counted at each measured wavelength, and the spectral response of the entire telescope for all filters is measured.
+	
+	Following this, the entrance slit width of the monochromator is increased to 3 mm, and the light output is measured from the clear aperture of the collimator with a NIST photodiode to verify the spectral flux being fed into the SUIT payload. This information can be used to get a radiometric calibration to the measured spectral flux.
+
+%xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+% \disclosures 
+\subsection*{Disclosures}
+Conflicts of interest should be declared under a "Disclosures" header. If the authors have no relevant financial interests in the manuscript and no other potential conflicts of interest to disclose, a statement to this effect should also be included in the manuscript.
+
+
+\subsection* {Code, Data, and Materials Availability} 
+In support of open scientific exchange, SPIE journals require Code, Data, and Materials Availability Statements in all accepted papers. This requirement went into effect on 1 May 2023. These statements should describe how to access any data that would be required to replicate or interpret the findings reported in the paper. Authors are encouraged to make the data and code related to the manuscript publicly available whenever possible, and utilize repositories that are well-known to the field (FigShare, Github, CodeOcean, etc.). If the data or code cannot be made publicly available, the authors should state the reason and explain how it can be obtained. Likewise, if data sharing is not applicable, the statement must say so. Example statements may be found in the Author Guidelines for the journal.
+
+
+\subsection* {Acknowledgments}
+This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding. 
+
+
+%%%%% References %%%%%
+
+\bibliography{report}   % bibliography data in report.bib
+\bibliographystyle{spiejour}   % makes bibtex use spiejour.bst
+
+%%%%% Biographies of authors %%%%%
+
+\vspace{2ex}\noindent\textbf{First Author} is an assistant professor at the University of Optical Engineering. He received his BS and MS degrees in physics from the University of Optics in 1985 and 1987, respectively, and his PhD degree in optics from the Institute of Technology in 1991.  He is the author of more than 50 journal papers and has written three book chapters. His current research interests include optical interconnects, holography, and optoelectronic systems. He is a member of SPIE.
+
+\vspace{1ex}
+\noindent Biographies and photographs of the other authors are not available.
+
+\listoffigures
+\listoftables
+
+%\end{spacing}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Introduction}
 \label{sect:intro}  % \label{} allows reference to this section
@@ -228,33 +452,3 @@ To include theorems in a formal way, the theorem identification should appear in
 
 \vspace{2ex}\noindent{\footnotesize\textbf{Theorem 1.} For any unbiased estimator...}
 
-% \disclosures 
-\subsection*{Disclosures}
-Conflicts of interest should be declared under a "Disclosures" header. If the authors have no relevant financial interests in the manuscript and no other potential conflicts of interest to disclose, a statement to this effect should also be included in the manuscript.
-
-
-\subsection* {Code, Data, and Materials Availability} 
-In support of open scientific exchange, SPIE journals require Code, Data, and Materials Availability Statements in all accepted papers. This requirement went into effect on 1 May 2023. These statements should describe how to access any data that would be required to replicate or interpret the findings reported in the paper. Authors are encouraged to make the data and code related to the manuscript publicly available whenever possible, and utilize repositories that are well-known to the field (FigShare, Github, CodeOcean, etc.). If the data or code cannot be made publicly available, the authors should state the reason and explain how it can be obtained. Likewise, if data sharing is not applicable, the statement must say so. Example statements may be found in the Author Guidelines for the journal.
-
-
-\subsection* {Acknowledgments}
-This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding. 
-
-
-%%%%% References %%%%%
-
-\bibliography{report}   % bibliography data in report.bib
-\bibliographystyle{spiejour}   % makes bibtex use spiejour.bst
-
-%%%%% Biographies of authors %%%%%
-
-\vspace{2ex}\noindent\textbf{First Author} is an assistant professor at the University of Optical Engineering. He received his BS and MS degrees in physics from the University of Optics in 1985 and 1987, respectively, and his PhD degree in optics from the Institute of Technology in 1991.  He is the author of more than 50 journal papers and has written three book chapters. His current research interests include optical interconnects, holography, and optoelectronic systems. He is a member of SPIE.
-
-\vspace{1ex}
-\noindent Biographies and photographs of the other authors are not available.
-
-\listoffigures
-\listoftables
-
-\end{spacing}
-\end{document}
