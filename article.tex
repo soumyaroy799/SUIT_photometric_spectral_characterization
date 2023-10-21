@@ -31,7 +31,7 @@
 \maketitle
 
 \begin{abstract}
-This document shows the required format and appearance of a manuscript prepared for SPIE journals. It is prepared using LaTeX2e with the class file \texttt{spieman.cls}. Please note that the following journals require the use of structured abstracts in manuscript submissions: \textit{Neurophotonics}, the \textit{Journal of Biomedical Optics}, and the \textit{Journal of Medical Imaging}. Structured abstracts are encouraged for the \textit{Journal of Micro/Nanolithography, MEMS, and MOEMS}. Guidelines are available on the journal website. Whether structured or single-paragraph, the abstract should be a summary of the paper and not an introduction. Because the abstract may be used in abstracting and indexing databases, it should be self-contained (i.e., no numerical references) and substantive in nature, presenting concisely the objectives, methodology used, results obtained, and their significance. A list of up to six keywords should immediately follow. 
+The Solar Ultraviolet Imaging Telescope (\suit~) is one of the 7 payloads on board the Aditya-1 mission of the Indian Space Research Organization (ISRO). \suit~ will provide full as well as partial disk images of the Sun in the wavelength range 200{--}400 nm. This would help us to probe the solar atmosphere in different heights and understand the process of mass and energy transfer in between layers. It addition, for the first time, it will help us measure spatially resolved solar spectral irradiance, at the wavelength which is central for the Sun-Climate relationship. In this article we describe the measurements and determination of the photometric and spectral characterisation of the 11 science filter combinations.  
 \end{abstract}
 
 % Include a list of up to six keywords after the abstract
@@ -47,9 +47,11 @@ This document shows the required format and appearance of a manuscript prepared 
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an instrument on-board Aditya{--}L1 mission \cite{adityal1,aditya} of the Indian Space Research Organization (ISRO) launched on September 2, 2023, that would measure the solar radiation in the near ultraviolet range (200{--}400 nm). \suit~ with its 11 science filters (3 broadband and 8 narrowband) will have the capability to probe different heights of solar atmosphere in photosphere and chromosphere, to help us understand the different processes that transport mass and energy from one layer to another. \suit~ will provide full disk as well as partial disk images of the Sun with a pixel size of 0.7".
+The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an instrument on-board Aditya{--}L1 mission \cite{adityal1,aditya} of the Indian Space Research Organization (ISRO) launched on September 2, 2023, that would measure the solar radiation in the near ultraviolet range (200{--}400 nm). \suit~, with its 11 scientific bandpasses (3 broadband and 8 narrowband) will have the capability to probe different heights of solar atmosphere in the photosphere and the chromosphere. This will help us understand the different processes that transport mass and energy from one layer to another. \suit~ will provide full disk as well as partial disk images of the Sun with a plate scale of 0.7"/px.
 
-\noindent With \suit~ imaging we would be able to resolve solar flares spatially on the surface of the Sun, in near ultra-violet (NUV), which will help us to address the questions regarding their build-up and triggering mechanism. In addition, to measure the spatially resolved solar spectral irradiance within the wavelength range that is central for the study the Chemistry of oxygen and ozone in the stratosphere of Earth's atmosphere. \suit~has two main sub-units - the optical bench and the payload electronics. The optical bench consists of two mirror off axis telescope. The main components of the telescope are entrance-door mechanism, thermal filter, primary and secondary mirrors, shutter mechanism, baffles, filter wheel assembly, focusing mechanism and the focal plane assembly. Fig \ref{fig:suit} shows a schematic diagram of the payload.
+ With \suit~ imaging we would be able to resolve solar flares spatially on the surface of the Sun, in near ultra-violet (NUV), which will help us to address the questions regarding their build-up and triggering mechanisms. In addition, \suit shall make spatially resolved solar spectral irradiance measurements within the wavelength range required to study the chemistry of oxygen and ozone in the Earth's stratosphere.
+
+\suit~has two main sub-units - the optical bench and the payload electronics. Atop the optical bench is an off-axis Ritchey Chreiten type telescope, specially designed to observe the sun in NUV.The main components constitute of a multi-operation entrance-door mechanism, thermal filter- to control the amount of incoming sunlight, primary and secondary mirrors, a shutter mechanism to control exposures, baffles to reduce scattering and stray light, a motorized filter wheel assembly, a piezoelectric focusing mechanism and a CCD detector. Fig \ref{fig:suit} shows a schematic diagram of the payload.
 
 %------------------------------------------------------------
 \begin{figure}[ht!]
@@ -63,7 +65,7 @@ The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an inst
 \end{figure} 
 %-----------------------------------------------------------
 
-\noindent The filter wheel assembly consists of two filter wheels, which accommodate 11 science filters and 3 bandpass filters. The bandpass filters are designed to balance the fluxes at the detector in different bands, to keep it within the dynamic range. This is necessary as the Solar flux increases by almost a factor of 20 in the wavelength range of 200{--}400 nm, shown in Fig. \ref{fig:sun_spec} taken from \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The two filter wheels can be rotated independently to achieve the desired filter combination. Table \ref{tab:science_filters} gives the details of all 11 science filters and the combination filters required for optimum throughput.
+The \suit~filter wheel assembly is responsible for selecting the desired filter combination among the 11 bandpasses to observe the requisite layer of the solar atmosphere. This is facilitated by a collection of 16 science filters, mounted on two 8-position filter wheels. The science filters are designed to balance the fluxes at the detector in different bands, to keep it within the dynamic range, while providing the needed bandpass. This is necessary as the Solar flux increases by almost a factor of 20 in the wavelength range of 200{--}400 nm, shown in Fig. \ref{fig:sun_spec} taken from \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The two filter wheels can be rotated independently to achieve the desired filter combination within the beam path. Table \ref{tab:science_filters} gives the details of all 11 science bandpasses and the required filter combination for optimum throughput.
 
 %-----------------------------------------------------------
 \begin{table*}[ht]
@@ -72,20 +74,20 @@ The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an inst
 \begin{center}
 \begin{tabular}{||l|c|c|c|r||}
 \hline
-Science  &	Combination &	Central		      & 		Bandpass 		& Science \\
-Filter	&	Filter     &	Wavelength  (nm)	&		(nm)		    &	target		\\
+\textbf{Science}  &	\textbf{Combination} &	\textbf{Central}		      & 		\textbf{Bandpass} 		& \textbf{Science} \\
+\textbf{Filter}	&	\textbf{Filter}     &	\textbf{Wavelength  (nm)}	&		\textbf{(nm)	}	    &	\textbf{target}		\\
 \hline
 NB1     & BB1 		& 214.0 		    & 11.0 				& Continuum\\
-NB2 	& CF1		& 276.7				& 0.4 				& Mg~\rm{II}~k blue wing \\
-NB3 	& CF1		& 279.6 			& 0.4 				& Mg~\rm{II}~k\\
-NB4 	& CF1		& 280.3				& 0.4 				& Mg~\rm{II}~h\\
-NB5		& CF1		& 283.2				& 0.4 				& Mg~\rm{II}~h red wing\\
-NB6 	& CF2		& 300.0 			&1.0 				& Continuum\\
-NB7 	& CF2		& 388.0				&1.0 				& Continuum\\
+NB2 	& BP2		& 276.7				& 0.4 				& Mg~\rm{II}~k blue wing \\
+NB3 	& BP2		& 279.6 			& 0.4 				& Mg~\rm{II}~k\\
+NB4 	& BP2		& 280.3				& 0.4 				& Mg~\rm{II}~h\\
+NB5		& BP2		& 283.2				& 0.4 				& Mg~\rm{II}~h red wing\\
+NB6 	& BP3		& 300.0 			&1.0 				& Continuum\\
+NB7 	& BP3		& 388.0				&1.0 				& Continuum\\
 NB8		& NB8		& 396.85 			& 0.1 				& Ca~\rm{II}~h\\
 BB1 	& BB1		& 220.0				& 40.0 				& Herzberg Continuum \\
-BB2 	& CF3		& 277.0 			& 58.0              & Hartley Band\\
-BB3 	& CF3		& 340.0				& 40.0              & Huggins Band\\
+BB2 	& BP4		& 277.0 			& 58.0              & Hartley Band\\
+BB3 	& BP4		& 340.0				& 40.0              & Huggins Band\\
 \hline
 \end{tabular}
 \end{center}
@@ -104,17 +106,29 @@ BB3 	& CF3		& 340.0				& 40.0              & Huggins Band\\
 \end{figure} 
 %-----------------------------------------------------------
 
+\suit~ payload aims to address the following questions related to the Sun:
+
+\begin{itemize}
+    \item Magnetic coupling and dynamics of the solar atmosphere.
+    \item Spectral energy distribution in solar flares in NUV
+    \item Measure and monitor the spatially resolved solar spectral irradiance in NUV
+\end{itemize}
+
+To address these science questions, the necessity of photometric and spectral characterisation is multifold.  \suit, with its capabilities, will be imaging the Sun and the dynamic process such as solar flare and jets etc., occurring in the solar atmosphere (eruptions of different scale) along with magnetic features such as active regions, plage and network regions. Photometric accuracy is key for commenting about the various physical process happening across various scales. The Earth's atmosphere absorbs UV and X-ray emission. Most of the UV radiation below 310 nm is absorbed by Earth's atmosphere, whereas UV radiation beyond 310~nm can penetrate Earth's atmosphere. The main source of absorption below 200~nm is $O_{2}$, while beyond 240 nm it is $O_{3}$. In the 200{--}240~nm region both $O_{2}$ and $O_{3}$ actively take part in the absorption mechanism \cite{haigh07}. So, the Solar spectral irradiance in 200{--}400~nm is one of the key inputs to understand the dynamics and Chemistry of Earth's atmosphere, especially the Ozone-Oxygen cycle, which can be used directly as a key input in modelling the Earth's atmosphere and inferring the Sun-Earth atmosphere connection. With an absolute stellar calibration \suit~would provide us the irradiance of the Sun in these bands before it is attenuated by Earth's atmosphere. Accurate spectral characterisation across these bands is key in commenting about the photo chemistry of the upper atmosphere.
+
+To achieve these scientific goals, photometric and spectral calibration of the payload is of utmost importance. An elaborate setup is developed for the calibration of the payload. The payload is kept in a vacuum chamber and maintained at high vacuum ($<10^{-6}$mbar) while the light of desired power and wavelength band from a monochromator is collimated and fed into the vacuum chamber and thereafter, the payload. The collimator used is a flight spare of the \suit payload with similar optical quality as the payload itself. The performed tests help calibrate the photometric counts with the input spectral flux and give a clear idea of the payload spectral response as a whole at its 11 spectral bandpasses. The measured responses are also comparable with simulated payload responses with $\sim 90\%$ similarity.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Setup}\label{sec:setup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The photometric test and calibration called for an elaborate setup which requires the input of a measured amout of light into the payload within a known band of wavelength. This called for a monochromator to generate monochromatic light within a certain band of wavelength, a collimator to feed the monochromatic light into the payload and a vacuum chamber to operate the payload by simulating space like conditions.
+The photometric test and calibration called for an elaborate setup which requires the input of a measured amount of light into the payload within a known band of wavelength. This called for a monochromator to generate monochromatic light within a certain band of wavelength, a collimator to feed the monochromatic light into the payload and a vacuum chamber to operate the payload by simulating space-like conditions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[ht!]
 \begin{center}
 \begin{tabular}{c}
-\includegraphics[width=0.8\linewidth]{experimental_setup}
+\includegraphics[trim={2.5cm 0 1.5cm 1.5cm},clip,width=\linewidth]{experimental_setup}
 \end{tabular}
 \end{center}
 \caption 
@@ -203,26 +217,131 @@ It is mounted on an optical table such that the front aperture is aligned with t
 	A NIST calibrated photodiode is kept at the exit aperture of the collimator. The wavelengths of the spectrograph and photodiode are set based on the science filter being tested. It is seen that the Xenon lamp spectrum does not change rapidly within 4.32 nm and can be assumed to be flat. Therefore, the output flux measured with the photodiode (in $Wm^{-2}$) can be divided by the wavelength band from the spectrograph to get the spectral flux from the collimator (in $W m^{-2} nm$). Also, the incoming wavelength band is wide enough to accommodate the entire transmission spectrum of the narrowband science filters (typically $< 1~nm$ FWHM). Therefore, the wavelength band incident from the monochromator is sufficient to perform the photometric test with the SUIT payload.
 		
 	In parallel, the SUIT telescope response has been determined based on the solar spectral irradiance and the throughput of each sub-assembly of the telescope. The experimentally determined throughput is compared with this simulated throughput to check the coherence of the experimental and simulated results. This is necessary to decide the exposure times for the SUIT payload in the 11 science bandpasses at various modes of operation.
+
+ The throughput model for various \suit~science filter combinations was designed to predict the counts for a given science filter combination with a sun-as-a-star spectra. The measured wavelength responses of the components are used to estimate the counts. If the photon flux incident on the entrance aperture is given by $P(\lambda)$, then the photoelectron count read at the detector would be given by,
+
+ %%%%%%%%%
+ \begin{equation}\label{eq1}
+     DM~=~\int~P(\lambda)~R(\lambda)~t~d\lambda
+ \end{equation}
+ %%%%%%%%%
+Where $R(\lambda)$ is the effective area for the specific filter combination and ‘t’ is the exposure time. The effective area $R(\lambda)$ is calculated by multiplying the measured instrumental response of all the optical components in the ray path. So, the filter response is given by
+
+%%%%%%%%%
+ \begin{align*}
+     & R(\lambda)~=~TF(\lambda)\times PM(\lambda)\times SM(lambda)\times SF_{i}(\lambda)\times SF_{j}(\lambda)\times L(\lambda)\times QE(\lambda)\times A\\
+     & TF(\lambda)\implies~Measured~thermal~filter~wavelength~response \\
+     & PM(\lambda)\implies~Measured~primary~mirror~wavelength~response \\
+     & SM(\lambda)\implies~Measured~secondary~mirror~wavelength~response \\
+     & SF_{i}(\lambda)\implies~Measured~science~filter~response~for~the~i^{th}~filter~on~filter~wheel~1 \\
+     & SF_{j}(\lambda)\implies~Measured~science~filter~response~for~the~j^{th}~filter~on~filter~wheel~2  \\
+     & L(\lambda)\implies~Measured~field~corrector~lens~wavelength~response \\
+     & QE(\lambda)\implies~Measured~quantum~efficiency~of~the~CCD \\
+     & A\implies~Area~of~the~entrance~apperture
+ \end{align*}
+ %%%%%%%%%
+ We carry out the comparison between the measurements and the throughput model with the following few steps:
+
+ %%%%%%%%%%
+ \begin{itemize}
+     \item For a given filter combination we have an image recorded of the optical fiber bundle at the band central wavelength, with the measurement setup shown in figure \ref{fig:experimentalsetup}. From the background corrected optical fiber images we calculate the 99\% encircled energy radius and the total enclosed data counts ($DN_{0.99}$).
+     \item The background is estimated by taking the median of dark image (optical fibers closed) pixels.
+     \item The photodiode gives the measurement of corresponding input flux($E_{0.99}$) in units of $nW.m^{-2}$ for an input spectral bin of 4.32 nm. The flux is divided by the spectral bin size to get the spectral irradiance per unit area in units of $nW.m^{-2}.nm^{-1}$. The ratio of $DN_{0.99}$ and ${E_{0.99}}$ tells us about the expected counts for any given input flux, $F~=~\frac{DN_{0.99}}{E_{0.99}}$ in units of $ADC~counts.s^{-1}/(nW.m^{-2}.nm^{-1})$.
+     \item We use a composite Solstice and Solspec solar spectra as our standard for solar radiation. Using the spectra we can calculate the total energy input from Sun for the concerned filter within the wavelength extent, $E_{\odot}~=~\int_{\lambda_{}}^{\lambda_{2}}~P(\lambda)~d\lambda$, where $P(\lambda)$ is the Solstice, Solspec composite solar spectra. Here, $\lambda_{1}-\lambda_{2}$ is the extent of the concerned band.
+     \item Using eqn.\ref{eq1} along with the aforementioned spectra, we can calculate the expected count observed (i.e. $DN_{throughput}~=~\int~P(\lambda)~R(\lambda)~t~d\lambda$) for a given filter combination.
+     \item The ratio inferred from the measurement of the input energy measured by the photdiode, and the total counts within 99\% encircled energy radius as described for the specific filter combination, F (in units of $ADC~counts.s^{-1}/(nW.m^{-2}.nm^{-1})$) can be used to calculate the expected counts from the Sun given by $DN_{measured}~=~E_{\odot}\times~F$
+     \item In table\ref{tab:throughput} we list out the comparison between the solar counts inferred from our measurements and the counts calculated from the throughput model, for some of the filter combinations. The values are in agreement within 15\%.
+ \end{itemize}
+ %%%%%%%%%%
+
+ %-----------------------------------------------------------
+\begin{table*}[ht]
+\caption{Comparison of the throughut model with the counts inferred from the measurements.} 
+\label{tab:throughput}
+\begin{center}
+\begin{tabular}{|||c|c|c|c|||}
+\hline
+Science & Photoelectron counts calculated & Photoelectron counts calculated & Ratio of \\
+filter & from measurement & from throughput model &  \\
+ & $DN_{measured}~=~E_{\odot}\times~F$ & $DN_{throughput}~=~\int~P(\lambda)~R(\lambda)~t~d\lambda$ & $\frac{DN_{measured}}{DN_{throughput}}$\\
+ & (photo electrons/s) & (photo electrons/s) & \\
+\hline
+NB2 & 53142 & 49099 & 1.08 \\
+NB3 & 18531 & 15520 & 1.19 \\
+NB4 & 35040 & 36717 & 0.95 \\
+NB5 & 124116 & 131625 & 0.943 \\
+NB6 & 105138 & 107064 & 0.98 \\
+NB8 & 26523 & 24096 & 1.1 \\
+BB3 & 511722 & 434532 & 1.18 \\
+\hline
+
+\end{tabular}
+\end{center}
+\end{table*}
+%-----------------------------------------------------------
+
+%################################### 
+\section{Spectral Calibration}
+%###################################
 	
-	\section{Spectral Calibration}
+The purpose of Spectral calibration is to verify the wavelength transmission profile of the SUIT payload with various science filters. For spectral calibration, a holographic grating of 2400 lpmm was used, blazed at 220 nm wavelength. The nominal dispersion of this grating is 0.74 nm/mm. The entrance slit width is set at 200 microns. Therefore, the wavelength bin being fed into SUIT is $(0.74 nm/mm \times 0.2 mm= 0.148 nm)$ nm. Readings are taken across the transmission spectrum of the science filter without any spectral overlap to keep adjacent readings independent of each other. The total energy is counted at each measured wavelength, and the spectral response of the entire telescope for all filters is measured.
 	
-	The purpose of Spectral calibration is to verify the wavelength transmission profile of the SUIT payload with various science filters. For spectral calibration, a holographic grating of 2400 lpmm was used, blazed at 220 nm wavelength. The nominal dispersion of this grating is 0.74 nm/mm. The entrance slit width is set at 200 microns. Therefore, the wavelength bin being fed into SUIT is $(0.74 nm/mm \times 0.2 mm= 0.148 nm)$ nm. Readings are taken across the transmission spectrum of the science filter without any spectral overlap to keep adjacent readings independent of each other. The total energy is counted at each measured wavelength, and the spectral response of the entire telescope for all filters is measured.
-	
-	Following this, the entrance slit width of the monochromator is increased to 3 mm, and the light output is measured from the clear aperture of the collimator with a NIST photodiode to verify the spectral flux being fed into the SUIT payload. This information can be used to get a radiometric calibration to the measured spectral flux.
+Following this, the entrance slit width of the monochromator is increased to 3 mm, and the light output is measured from the clear aperture of the collimator with a NIST photodiode to verify the spectral flux being fed into the SUIT payload. This information can be used to get a radiometric calibration to the measured spectral flux. The spectral calibration is calculated from the measurements from the following steps:
+
+ %%%%%%%%%%
+ \begin{itemize}
+ \item With the instrument setup described the input from the optical fiber bundle is imaged for various filter combinations. From the background corrected fiber images we calculate the 99\% encircled energy radius.
+ \item The background is estimated by taking the median of dark image (optical fibers closed) pixels.
+ \item The total counts within the 99\% encircled energy radius is calculated, $C_{i}$ in units of ADC counts/s.
+ \item The corresponding energy input from photo-diode measurement is $E_{i}$ in units of $nW.m^{-2}.nm^{-1}$.
+ \item The same measurement can be carried out for various wavelength points within the wavelength range of the concerned filter combination. The ratio of these two quantities, $F_{i}~=~\frac{C_{i}}{E_{i}}$ 
+the spectral calibration for that filter combination in units of $ADC~counts.s^{-1}/(nW.m^{-2}.nm^{-1})$ as a function of wavelength.
+ \end{itemize}
+ %%%%%%%%%%
+
+In figure \ref{fig:nb2_images} we show the captured images for the NB2 filter combination at various wavelengths. The measurement wavelength and the calculated 99\% encircled energy radius is quoted at the top of each panel.  In fig.~\ref{fig:sepc_calib} we plot the spectral calibration of various filter combinations. The x and y error bars in fig.~\ref{fig:sepc_calib} are the wavelength bins for the given input slit size, and the Poisson uncertainty of the measured ADC counts respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[width=\linewidth]{nb2_images.pdf}
+\end{tabular}
+\end{center}
+\caption 
+{ \label{fig:nb2_images} Images captured at various wavelengths for the NB2 filter combination. The measurement wavelength and the 99\% encircled energy radius is quoted at the top of each panel. The axis of the images are in pixels. The pixels are 12 $\mu$m in dimension.} 
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\includegraphics[trim={2.5cm 2.5cm 3cm 4cm},clip,width=\linewidth]{spec_calib.eps}
+\end{tabular}
+\end{center}
+\caption 
+{ \label{fig:sepc_calib} Spectral calibration for various filter combination inferred from the imaging measurements. The x errors are given by the wavelength bins for the given input slit size. The y errors are given by the Poisson uncertainty of the measured ADC counts.} 
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%###################################
+\section{Discussion \& Conclusion}\label{sec:conc}
+%###################################
 
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 % \disclosures 
 \subsection*{Disclosures}
-Conflicts of interest should be declared under a "Disclosures" header. If the authors have no relevant financial interests in the manuscript and no other potential conflicts of interest to disclose, a statement to this effect should also be included in the manuscript.
+%Conflicts of interest should be declared under a "Disclosures" header. If the authors have no relevant financial interests in the manuscript and no other potential conflicts of interest to disclose, a statement to this effect should also be included in the manuscript.
 
 
 \subsection* {Code, Data, and Materials Availability} 
-In support of open scientific exchange, SPIE journals require Code, Data, and Materials Availability Statements in all accepted papers. This requirement went into effect on 1 May 2023. These statements should describe how to access any data that would be required to replicate or interpret the findings reported in the paper. Authors are encouraged to make the data and code related to the manuscript publicly available whenever possible, and utilize repositories that are well-known to the field (FigShare, Github, CodeOcean, etc.). If the data or code cannot be made publicly available, the authors should state the reason and explain how it can be obtained. Likewise, if data sharing is not applicable, the statement must say so. Example statements may be found in the Author Guidelines for the journal.
+%In support of open scientific exchange, SPIE journals require Code, Data, and Materials Availability Statements in all accepted papers. This requirement went into effect on 1 May 2023. These statements should describe how to access any data that would be required to replicate or interpret the findings reported in the paper. Authors are encouraged to make the data and code related to the manuscript publicly available whenever possible, and utilize repositories that are well-known to the field (FigShare, Github, CodeOcean, etc.). If the data or code cannot be made publicly available, the authors should state the reason and explain how it can be obtained. Likewise, if data sharing is not applicable, the statement must say so. Example statements may be found in the Author Guidelines for the journal.
 
 
 \subsection* {Acknowledgments}
-This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding. 
+%This unnumbered section is used to identify those who have aided the authors in understanding or accomplishing the work presented and to acknowledge sources of funding. 
 
 
 %%%%% References %%%%%
