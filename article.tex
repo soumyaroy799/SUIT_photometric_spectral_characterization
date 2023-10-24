@@ -16,10 +16,12 @@
 
 %%%%%%%%%%%%% ############# %%%%%%%%%%%
 \newcommand{\isro}{{\it ISRO}}
-\newcommand{\suit}{{\it{SUIT}}}
+\newcommand{\suit}{{\it SUIT~}}
 \newcommand{\degree}{$^{\circ}$}
 \newcommand{\sr}[1]{{\bf\color{red} [#1]}}
 \newcommand{\dt}[1]{{\bf\color{blue} [#1]}}
+\newcommand{\js}[1]{{\bf\color{magenta} [#1]}}
+
 %%%%%%%%%%%%% ############  %%%%%%%%%%%
 
 
@@ -31,11 +33,11 @@
 \maketitle
 
 \begin{abstract}
-The Solar Ultraviolet Imaging Telescope (\suit~) is one of the 7 payloads on board the Aditya-1 mission of the Indian Space Research Organization (ISRO). \suit~ will provide full as well as partial disk images of the Sun in the wavelength range 200{--}400 nm. This would help us to probe the solar atmosphere in different heights and understand the process of mass and energy transfer in between layers. It addition, for the first time, it will help us measure spatially resolved solar spectral irradiance, at the wavelength which is central for the Sun-Climate relationship. In this article we describe the measurements and determination of the photometric and spectral characterisation of the 11 science filter combinations.  
+The Solar Ultraviolet Imaging Telescope (\suit) is one of the 7 payloads on board the Aditya-L1 mission of the Indian Space Research Organization (\isro). \suit will provide full as well as partial disk images of the Sun in the wavelength range of 200{--}400 nm. This would help us probe the solar atmosphere at different heights and understand the process of mass and energy transfer between layers. \suit will also help us measure spatially resolved solar spectral irradiance at the wavelengths significant for the Sun-Climate relationship studies for the very first time. In this article, we present the methodology and results for photometric and spectral characterization of the payload across its 11 available science filter combinations.  
 \end{abstract}
 
 % Include a list of up to six keywords after the abstract
-\keywords{optics, photonics, light, lasers, journal manuscripts, LaTeX template}
+\keywords{optics, photonics, light, solar, NUV, sun-climate, irradiance}
 
 % Include email contact information for corresponding author
 {\noindent \footnotesize\textbf{*}Fourth author name,  \linkable{myemail@university.edu} }
@@ -47,11 +49,11 @@ The Solar Ultraviolet Imaging Telescope (\suit~) is one of the 7 payloads on boa
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an instrument on-board Aditya{--}L1 mission \cite{adityal1,aditya} of the Indian Space Research Organization (ISRO) launched on September 2, 2023, that would measure the solar radiation in the near ultraviolet range (200{--}400 nm). \suit~, with its 11 scientific bandpasses (3 broadband and 8 narrowband) will have the capability to probe different heights of solar atmosphere in the photosphere and the chromosphere. This will help us understand the different processes that transport mass and energy from one layer to another. \suit~ will provide full disk as well as partial disk images of the Sun with a plate scale of 0.7"/px.
+The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an instrument on-board Aditya{--}L1 mission \cite{adityal1,aditya} of the Indian Space Research Organization (\isro) launched on September 2, 2023, that would measure the solar radiation in the near ultraviolet range (200{--}400 nm). \suit, with its 11 scientific bandpasses (3 broadband and 8 narrowband) will have the capability to probe different heights of solar atmosphere in the photosphere and the chromosphere. This will help us understand the different processes that transport mass and energy from one layer to another. \suit will provide full disk as well as partial disk images of the Sun with a plate scale of 0.7"/px.
 
- With \suit~ imaging we would be able to resolve solar flares spatially on the surface of the Sun, in near ultra-violet (NUV), which will help us to address the questions regarding their build-up and triggering mechanisms. In addition, \suit shall make spatially resolved solar spectral irradiance measurements within the wavelength range required to study the chemistry of oxygen and ozone in the Earth's stratosphere.
+ With \suit imaging we would be able to resolve solar flares spatially on the surface of the Sun, in near ultra-violet (NUV), which will help us to address the questions regarding their build-up and triggering mechanisms. In addition, \suit shall make spatially resolved solar spectral irradiance measurements within the wavelength range required to study the chemistry of oxygen and ozone in the Earth's stratosphere.
 
-\suit~has two main sub-units - the optical bench and the payload electronics. Atop the optical bench is an off-axis Ritchey Chreiten type telescope, specially designed to observe the sun in NUV.The main components constitute of a multi-operation entrance-door mechanism, thermal filter- to control the amount of incoming sunlight, primary and secondary mirrors, a shutter mechanism to control exposures, baffles to reduce scattering and stray light, a motorized filter wheel assembly, a piezoelectric focusing mechanism and a CCD detector. Fig \ref{fig:suit} shows a schematic diagram of the payload.
+\suit has two main sub-units - the optical bench and the payload electronics. Atop the optical bench is an off-axis Ritchey Chreiten type telescope, specially designed to observe the sun in NUV.The main components constitute of a multi-operation entrance-door mechanism, thermal filter- to control the amount of incoming sunlight, primary and secondary mirrors, a shutter mechanism to control exposures, baffles to reduce scattering and stray light, a motorized filter wheel assembly, a piezoelectric focusing mechanism and a CCD detector. Fig \ref{fig:suit} shows a schematic diagram of the payload.
 
 %------------------------------------------------------------
 \begin{figure}[ht!]
@@ -61,33 +63,33 @@ The Solar Ultraviolet Imaging Telescope(\suit) \cite{ghosh16,article} is an inst
 \end{tabular}
 \end{center}
 \caption 
-{ \label{fig:suit} A schematic diagram of \suit~payload with various components as labeled. } 
+{ \label{fig:suit} A schematic diagram of \suit payload with various components as labeled. } 
 \end{figure} 
 %-----------------------------------------------------------
 
-The \suit~filter wheel assembly is responsible for selecting the desired filter combination among the 11 bandpasses to observe the requisite layer of the solar atmosphere. This is facilitated by a collection of 16 science filters, mounted on two 8-position filter wheels. The science filters are designed to balance the fluxes at the detector in different bands, to keep it within the dynamic range, while providing the needed bandpass. This is necessary as the Solar flux increases by almost a factor of 20 in the wavelength range of 200{--}400 nm, shown in Fig. \ref{fig:sun_spec} taken from \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The two filter wheels can be rotated independently to achieve the desired filter combination within the beam path. Table \ref{tab:science_filters} gives the details of all 11 science bandpasses and the required filter combination for optimum throughput.
+The \suit filter wheel assembly is responsible for selecting the desired filter combination among the 11 bandpasses to observe the requisite layer of the solar atmosphere. This is facilitated by a collection of 16 science filters, mounted on two 8-position filter wheels. The science filters are designed to balance the fluxes at the detector in different bands, to keep it within the dynamic range, while providing the needed bandpass. This is necessary as the Solar flux increases by almost a factor of 20 in the wavelength range of 200{--}400 nm, shown in Fig. \ref{fig:sun_spec} taken from \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} \cite{bohlin14,bohlin20,bohlin22} database. The two filter wheels can be rotated independently to achieve the desired filter combination within the beam path. Table \ref{tab:science_filters} gives the details of all 11 science bandpasses and the required filter combination for optimum throughput.
 
 %-----------------------------------------------------------
 \begin{table*}[ht]
-\caption{List of science filters on board \suit. The columns from left to right denote: filter abbreviations, central wavelengths for science filters, corresponding  and the science target of the band.} 
+\caption{List of science filters on board \suit. The columns from left to right denote: filter abbreviations, central wavelengths for science filters, corresponding bandpass, Nominal exposure time for a full disk observation the science target of the band.} 
 \label{tab:science_filters}
 \begin{center}
-\begin{tabular}{||l|c|c|c|r||}
+\begin{tabular}{||l|c|c|c|c|r||}
 \hline
-\textbf{Science}  &	\textbf{Combination} &	\textbf{Central}		      & 		\textbf{Bandpass} 		& \textbf{Science} \\
-\textbf{Filter}	&	\textbf{Filter}     &	\textbf{Wavelength  (nm)}	&		\textbf{(nm)	}	    &	\textbf{target}		\\
+\textbf{Science}  &	\textbf{Combination} &	\textbf{Central} & \textbf{Bandpass}& \textbf{Nominal} &\textbf{Science} \\
+\textbf{Filter}	&	\textbf{Filter}     &	\textbf{Wavelength  (nm)}	&		\textbf{(nm)	}	    & \textbf{Exp. Time (s)}	&\textbf{target}		\\
 \hline
-NB1     & BB1 		& 214.0 		    & 11.0 				& Continuum\\
-NB2 	& BP2		& 276.7				& 0.4 				& Mg~\rm{II}~k blue wing \\
-NB3 	& BP2		& 279.6 			& 0.4 				& Mg~\rm{II}~k\\
-NB4 	& BP2		& 280.3				& 0.4 				& Mg~\rm{II}~h\\
-NB5		& BP2		& 283.2				& 0.4 				& Mg~\rm{II}~h red wing\\
-NB6 	& BP3		& 300.0 			&1.0 				& Continuum\\
-NB7 	& BP3		& 388.0				&1.0 				& Continuum\\
-NB8		& NB8		& 396.85 			& 0.1 				& Ca~\rm{II}~h\\
-BB1 	& BB1		& 220.0				& 40.0 				& Herzberg Continuum \\
-BB2 	& BP4		& 277.0 			& 58.0              & Hartley Band\\
-BB3 	& BP4		& 340.0				& 40.0              & Huggins Band\\
+NB1     & BB1 		& 214.0 		    & 11.0 		&		& Continuum\\
+NB2 	& BP2		& 276.7				& 0.4 		&		& Mg~\rm{II}~k blue wing \\
+NB3 	& BP2		& 279.6 			& 0.4 		&		& Mg~\rm{II}~k\\
+NB4 	& BP2		& 280.3				& 0.4 		&		& Mg~\rm{II}~h\\
+NB5		& BP2		& 283.2				& 0.4 		&		& Mg~\rm{II}~h red wing\\
+NB6 	& BP3		& 300.0 			&1.0 		&		& Continuum\\
+NB7 	& BP3		& 388.0				&1.0 		&		& Continuum\\
+NB8		& NB8		& 396.85 			& 0.1 		&		& Ca~\rm{II}~h\\
+BB1 	& BB1		& 220.0				& 40.0 		&		& Herzberg Continuum \\
+BB2 	& BP4		& 277.0 			& 58.0       &       & Hartley Band\\
+BB3 	& BP4		& 340.0				& 40.0        &      & Huggins Band\\
 \hline
 \end{tabular}
 \end{center}
@@ -95,18 +97,18 @@ BB3 	& BP4		& 340.0				& 40.0              & Huggins Band\\
 %-----------------------------------------------------------
 
 %------------------------------------------------------------
-\begin{figure}[ht!]
+\begin{figure}[ht]
 \begin{center}
 \begin{tabular}{c}
-\includegraphics[width=0.8\linewidth]{spectrum_sun.eps}
+\includegraphics[width=0.7\linewidth]{spectrum_sun.eps}
 \end{tabular}
 \end{center}
 \caption 
-{ \label{fig:sun_spec} The Solar spectra from the \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The Inset plot shows the wavelength range in which \suit~is going to observe the Sun, showing the dramatic rise of the spectra in that wavelength band.} 
+{ \label{fig:sun_spec} The Solar spectra from the \href{https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec}{CALSPEC} database. The Inset plot shows the wavelength range in which \suit is going to observe the Sun, showing the dramatic rise of the spectra in that wavelength band.} 
 \end{figure} 
 %-----------------------------------------------------------
 
-\suit~ payload aims to address the following questions related to the Sun:
+\suit  payload aims to address the following questions related to the Sun:
 
 \begin{itemize}
     \item Magnetic coupling and dynamics of the solar atmosphere.
@@ -114,9 +116,9 @@ BB3 	& BP4		& 340.0				& 40.0              & Huggins Band\\
     \item Measure and monitor the spatially resolved solar spectral irradiance in NUV
 \end{itemize}
 
-To address these science questions, the necessity of photometric and spectral characterisation is multifold.  \suit, with its capabilities, will be imaging the Sun and the dynamic process such as solar flare and jets etc., occurring in the solar atmosphere (eruptions of different scale) along with magnetic features such as active regions, plage and network regions. Photometric accuracy is key for commenting about the various physical process happening across various scales. The Earth's atmosphere absorbs UV and X-ray emission. Most of the UV radiation below 310 nm is absorbed by Earth's atmosphere, whereas UV radiation beyond 310~nm can penetrate Earth's atmosphere. The main source of absorption below 200~nm is $O_{2}$, while beyond 240 nm it is $O_{3}$. In the 200{--}240~nm region both $O_{2}$ and $O_{3}$ actively take part in the absorption mechanism \cite{haigh07}. So, the Solar spectral irradiance in 200{--}400~nm is one of the key inputs to understand the dynamics and Chemistry of Earth's atmosphere, especially the Ozone-Oxygen cycle, which can be used directly as a key input in modelling the Earth's atmosphere and inferring the Sun-Earth atmosphere connection. With an absolute stellar calibration \suit~would provide us the irradiance of the Sun in these bands before it is attenuated by Earth's atmosphere. Accurate spectral characterisation across these bands is key in commenting about the photo chemistry of the upper atmosphere.
+To address these science questions, the necessity of photometric and spectral characterisation is multifold.  \suit, with its capabilities, will be imaging the Sun and the dynamic process such as solar flare and jets etc., occurring in the solar atmosphere (eruptions of different scale) along with magnetic features such as active regions, plage and network regions. Photometric accuracy is key for commenting about the various physical process happening across various scales. The Earth's atmosphere absorbs UV and X-ray emission. Most of the UV radiation below 310 nm is absorbed by Earth's atmosphere, whereas UV radiation beyond 310~nm can penetrate Earth's atmosphere. The main source of absorption below 200~nm is $O_{2}$, while beyond 240 nm it is $O_{3}$. In the 200{--}240~nm region both $O_{2}$ and $O_{3}$ actively take part in the absorption mechanism \cite{haigh07}. So, the Solar spectral irradiance in 200{--}400~nm is one of the key inputs to understand the dynamics and Chemistry of Earth's atmosphere, especially the Ozone-Oxygen cycle, which can be used directly as a key input in modelling the Earth's atmosphere and inferring the Sun-Earth atmosphere connection. With an absolute stellar calibration \suit would provide us the irradiance of the Sun in these bands before it is attenuated by Earth's atmosphere. Accurate spectral characterisation across these bands is key in commenting about the photo chemistry of the upper atmosphere.
 
-To achieve these scientific goals, photometric and spectral calibration of the payload is of utmost importance. An elaborate setup is developed for the calibration of the payload. The payload is kept in a vacuum chamber and maintained at high vacuum ($<10^{-6}$mbar) while the light of desired power and wavelength band from a monochromator is collimated and fed into the vacuum chamber and thereafter, the payload. The collimator used is a flight spare of the \suit payload with similar optical quality as the payload itself. The performed tests help calibrate the photometric counts with the input spectral flux and give a clear idea of the payload spectral response as a whole at its 11 spectral bandpasses. The measured responses are also comparable with simulated payload responses with $\sim 90\%$ similarity.
+To achieve these scientific goals, photometric and spectral calibration of the payload is of utmost importance. An elaborate setup is developed for the calibration of the payload. The payload is kept in a vacuum chamber and maintained at high vacuum ($<10^{-6}$mbar) while the light of desired power and wavelength band from a monochromator is collimated and fed into the vacuum chamber and thereafter, the payload. The collimator used is a flight spare of the \suit payload with similar optical quality as the payload itself. The performed tests help calibrate the photometric counts with the input spectral flux and give a clear idea of the payload spectral response as a whole at its 11 spectral bandpasses. The measured responses are also comparable with simulated payload responses with $\sim 85\%$ similarity.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Experimental Setup}\label{sec:setup}
@@ -125,22 +127,38 @@ To achieve these scientific goals, photometric and spectral calibration of the p
 The photometric test and calibration called for an elaborate setup which requires the input of a measured amount of light into the payload within a known band of wavelength. This called for a monochromator to generate monochromatic light within a certain band of wavelength, a collimator to feed the monochromatic light into the payload and a vacuum chamber to operate the payload by simulating space-like conditions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[ht!]
+\begin{figure*}[ht]
 \begin{center}
 \begin{tabular}{c}
-\includegraphics[trim={2.5cm 0 1.5cm 1.5cm},clip,width=\linewidth]{experimental_setup}
+\includegraphics[trim={2.5cm 0 1.5cm 1.5cm},clip,width=0.8\linewidth]{experimental_setup}
 \end{tabular}
 \end{center}
 \caption 
 { \label{fig:experimentalsetup} Experimental Setup for photometric and spectral calibration of the SUIT payload.} 
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Contamination control and payload preparation}
+
+\suit is designed to operate in the NUV band of light, making the payload throughput susceptible to particulate and molecular contamination due to high scattering at short wavelengths. Therefore, the payload is assembled and stored in a Class 100 environment with constant purging of level 5 purity (0.0001\% impurity) gaseous nitrogen.
+ 
+ The SUIT CCD has to be maintained at -55\degree C for reliable operation. In space, this is achieved with a radiator plate and a cold finger, which passively cools the CCD by radiating the heat in a direction away from the Sun. Cooling the CCD to that extent in the atmosphere shall cause condensation of water vapor and other contaminants on the CCD surface which is detrimental for CCD electronics and optical throughput. Therefore, the CCD is cooled in a 0.7 m custom-made vacuum chamber at a pressure of $10^{-6}$ mbar to prevent condensation on the CCD.
+ Inside the chamber, a jacket is mounted over the cold finger instead of the radiator plate, and cooling is achieved by closed-loop micro-dosing of liquid nitrogen through the jacket.
+
+The vacuum chamber is thoroughly wiped with isopropyl alcohol and is baked at  $70^\circ C$ for 24 hours to remove any contaminants that may exist inside the chamber. Upon reaching room temperature, the level of contamination in the vacuum chamber is verified with a Temperature Controlled Quartz Crystal Microbalance (TQCM). The crystal is kept at a temperature of -10\degree C in high vacuum, making it the coldest surface inside the chamber. Contaminants, if any, get condensed on the TQCM, thus changing the crystal's resonant frequency. The rate of change of frequency measures the amount of contaminant in the chamber. For SUIT, a TQCM count of $\leq 3 Hz/hr$ over 24 hours was considered satisfactory. However, $\leq 2 Hz/hr$ was achieved in practice. \js{Citation Needed}
+
+The photometric and spectral calibration of \suit was performed after payload vibration, acoustic and thermovacuum qualification tests. This required the payload to be transported to various clean rooms and labs. Contamination control protocols were strictly followed during transportation and the tests. However, the payload was subjected to a bakeout at $40 ^\circ C$ for 36 hours before cooling the CCD to avert any risk of contaminating the CCD upon cooling. Post baking, the payload was cooled to room temperature and TQCM verification was performed. The TQCM count was seen to be $< 3 Hz/hr$ after 24 hours of verification, following which the CCD was cooled and the experiments were performed.
  
 \subsection{SUIT Collimator}		
-The Sun acts as a collimated light source which SUIT is designed to observe. Therefore, collimated light must be fed into the telescope for testing and calibration. Also, the light should lie in the UV band, and the wavefront error should at least be as good as the SUIT payload. For these reasons, SUIT's qualification model (QM) passes as a viable choice for being a collimator. The SUIT QM, used as the collimator, functions in the opposite sense of the SUIT payload. Instead of collimated light being fed from the front aperture, a converging beam of light is fed from the detector side of the collimator. Light from any object kept at the  CCD plane of the collimator emerges collimated beyond the primary mirror. This collimated beam of light is then fed into the SUIT telescope, and imaging is performed with the SUIT CCD.
+The Sun is a collimated light source of finite angular size. Therefore, collimated light must be fed into \suit for testing and calibration. Also, the light should lie in the UV band, and the wavefront error should at least be as good as the payload itself, to ensure good image quality and reliable photometry. For these reasons, the \suit flight spare passes as a viable choice for being a Collimator. The \suit Collimator functions in the opposite sense as that of the payload. Instead of collimated light entering through the front aperture, an illuminated target is kept at the  detector plane of the collimator. This collimated beam of light is then fed into \suit, which eventually gets focused onto the \suit CCD.
 	
-The SUIT collimator exhibits a wavefront error $\sim 37.2$ nm with a computed Strehl Ratio of 0.87. The zernike coefficients of the collimator are tabulated in Table \ref{table: zernikes}.
-It is mounted on an optical table such that the front aperture is aligned with the view port of the vacuum chamber housing the SUIT payload. The optical bench is designed to rest on six pods bolted to the optical table. The pods are mounted on the optical table, and the optical bench is placed over them. A feeler gauge measures any non-planarity between the bench and the pods. Any gaps above 25 microns are filled with shims of appropriate thicknesses. All the bolts fastening the bench and the pods are uniformly torqued to 400 Ncm. A small flat mirror is attached to the rear surface of the SUIT primary mirror. A theodolite is used to autocollimate to the back of the primary mirror, and the reference is used to set the optical axis of a plane mirror placed in front of the aperture of the collimator. An f/25 transmission sphere is used to focus light at the focal plane of the collimator. The interferometer is tilted by 2.64 degrees with respect to the SUIT optical axis to align it with the secondary mirror arm of the collimator. The tilt is verified with an autocollimator, and the beam is fed along the chief ray. The light emerges collimated from the front aperture and is retro-reflected back by the flat mirror into the collimator. The interferogram is recorded, and the RMS wavefront error is used as a reference to determine if any unwanted stress is passed on to the payload bench. In any warping, the RMS wavefront error is expected to deviate from 37.2 nm grossly. The telescope is of RC design, causing the wavefront error to change grossly in case of misalignment.
+The optical quality of a system is determined by its wavefront error. A perfect wavefront is a plane in nature. However, optical aberrations introduce undulations in the resultant wavefront, giving rise to peaks and valleys. Therefore, the optical performance of a system is quantified by the RMS deviation of the wavefront about a mean level. Lesser the RMS wavefront error, better is the optical performance of the optical system. The \suit collimator exhibits an RMS wavefront error of 41.4 nm ($\sim \lambda/7 ~ for ~ 300~ nm$) as compared to the \suit payload's 34 nm ($\sim \lambda/9 ~ for ~ 300~ nm$). The zernike coefficients of the collimator are tabulated in Table \ref{table: zernikes}.
+
+The collimator is mounted on an optical table such that the front aperture is aligned with the viewport of the vacuum chamber housing the SUIT payload. The optical bench is designed to rest on six pods bolted to the optical table. A feeler gauge is used to measure any non-planarity between the bench and the pods. Any gaps above 25 microns are filled with shims of appropriate thicknesses. All the bolts fastening the bench and the pods are uniformly torqued to 400 Ncm. 
+
+A small flat mirror is attached to the rear surface of the Collimator primary mirror. A theodolite is used to auto-collimate to the back of the primary mirror, and a larger mirror is placed ahead of the collimator aperture. This mirror is tilted to achieve autocollimation with the previously aligned theodolite, making it in line with the Collimator primary mirror.
+
+An f/25 transmission sphere is used to focus light at the focal plane of the Collimator. The interferometer is tilted by 2.64 degrees with respect to the reference mirror axis, to align it with the secondary mirror arm of the Collimator. The tilt of the interferometer is verified with an autocollimator, and the beam is fed along the chief ray. The light emerges collimated from the front aperture and is retro-reflected back by the large reference mirror into the collimator. The interferogram is recorded, and the RMS wavefront error is used as a reference to determine if any unwanted stress has passed on to the payload bench. The telescope and collimator are of RC design, which causes the wavefront error to change grossly in case of stress induced misalignment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table*}[ht]
@@ -149,7 +167,7 @@ It is mounted on an optical table such that the front aperture is aligned with t
     \begin{center}
 			\begin{tabular}{|c|c|c|}
 				\hline
-				\rule[-1ex]{0pt}{2.5ex} \textbf{Aberration} & \textbf{FM (nm)} & \textbf{QM (nm)}\\
+				\rule[-1ex]{0pt}{2.5ex} \textbf{Aberration} & \textbf{\textit{SUIT} payload (nm)} & \textbf{Collimator (nm)}\\
 				\hline
 				\hline
 				\rule[-1ex]{0pt}{2.5ex} \textbf{RMS} & 34 & 41.4 \\
@@ -177,59 +195,42 @@ It is mounted on an optical table such that the front aperture is aligned with t
 	\end{table*} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\subsection{Co-alignment of optical bench and collimator}
-	Light emerging through the collimator's clear aperture must be fed completely into the payload to avoid any loss of light. Therefore, the collimator and payload have to be aligned intricately.
+\subsection{Co-alignment of optical bench and collimator}
+Light from the collimator is fed into the vacuum chamber, which is focussed and imaged by \suit. To avoid any loss of light, it is necessary to align the lateral position and tilt of the payload and the collimator. Laterally, the optical axes of both the benches are aligned with millimeter precision, while the tilts are matched with arcmin precision. This intricate alignment of the collimator and the payload is achieved with a theodolite cum autocollimator.
+
+The theodolite is autocollimated with the reference mirror used with the collimator. Using a repeater mirror, the axis is preserved while the theodolite is shifted laterally. Now, a both sided mirror is sighted with the theodolite and its tilt is adjusted to align it with the theodolite axis.
 	
-	The collimator is mounted on the optical bench, and the payload is loaded in the vacuum chamber. 
+The theodolite is shifted to the opposite side of the setup, such that it faces the back of the \suit payload. It is autocollimated with the double sided mirror which aligns the theodolite with the collimator axis. Maintaining autocollimation with a repeater mirror, the theodolite is laterally shifted such that it lines up with the payload alignment cube.
+The alignment cube is a highly reflective cube of side 5 mm, mounted outside \suit cover panels. The front and back surfaces of the cube are aligned with respect to the \suit optical axis with a measured amount of offset. The cube is necessary to align the paylaod with the satellite axis, as well as for co-alignment with other payloads or the \suit collimator.
+Keeping the theodolite axis invariant, it is laterally shifted to get the alignment cube in its line of sight. The alignment cube offset with respect to the \suit optical axis is set in the theodolite and the payload is shifted within the play of the bolts to achieve autocollimation with the alignment cube. This aligns the payload in the vacuum chamber with the collimator facing it outside the vacuum chamber.
 	
-	A small mirror mounted behind the collimator primary mirror is sighted and autocollimated with a theodolite. This is used to align the theodolite with the optical axis of the collimator.
-	
-	The theodolite is laterally shifted while maintaining auto-collimation with a repeater mirror, and a both sided mirror is sighted with the theodolite.
-	
-	The tilt of the mirror is so adjusted as to achieve auto-collimation. This aligns the mirror with the optical axis of the theodolite. 
-	
-	The theodolite is shifted to the opposite side and autocollimated with the back of the double sided mirror.
-	
-	Maintaining autocollimation with a repeater mirror, the theodolite is laterally shifted, and the alignment cube of the payload is sighted within the vacuum chamber. The payload is moved within the play of the bolt holes to achieve auto-collimation with the theodolite.
-	
-	This ensures that the payload is optically aligned with the collimator.
-	
-	An interferometer is used with a f/3.5 transmission sphere to overfill the mirrors of SUIT. The interferometer beam is fed along the optical axis of the payload, which is retroreflected back from a flat mirror. The return beam passes through the SUIT optics and reaches the interferometer, which gives the  interferogram. Repeated interferograms are taken, and the fringes are constantly monitored. The interferometer is moved along the z-axis till the fringes appear straight instead of circular, indicating nullification of the power. The point of convergence of the beam from the interferometer is the focal point of the collimator. Light from any target kept at that location will emerge collimated from the front aperture of the collimator. 
-	
-	A 5 micron pinhole is mounted on an x-y-z micrometer stage and introduced at the converging beam's face. A camera is used to see the light emerging from the pinhole as the intensity is maximum while decaying rapidly with small change in position when the pinhole is aligned with the point of convergence of the beam. This marks the on-axis focal point of the pinhole and the x-y plane of movement of the pinhole defines the focal plane.
-	
-	
-	\subsection{Payload}
-	The SUIT CCD needs to be cooled at -55 deg C for reliable operation. In space, this is achieved by a radiator plate and a cold finger, which passively cools the CCD by radiating the heat in a direction away from the Sun. However, cooling the CCD to that extent in the atmosphere shall cause deposition of water vapour and other contaminants on the CCD surface. Therefore, the payload is cooled in a high vacuum environment of the order of $10^{-6}$ mbar in a 0.7 m custom-made vacuum chamber. Cooling is achieved by closed-loop microdosing of liquid nitrogen through a cooling jacket mounted on the cold finger instead of the radiator plate.
-	
-	Extreme cooling of the CCD poses the threat of molecular contaminant deposition on the CCD surface. The level of contamination in the vacuum chamber is verified with a Temperature Controlled Quartz Crystal Microbalance (TQCM). SUIT operates in the NUV band of light, making it very sensitive to particulate and molecular contamination which can reduce the throughput of the instrument due to scattering of NUV light. To mitigate these issues, the payload is assembled and operated in a Class 100 clean room before loading it in the vacuum chamber.
-	
-	To remove any contaminants inside the vacuum chamber, it is thoroughly wiped with isopropyl alcohol and the vacuum chamber is baked at  $70^\circ C$ for 24 hours. Upon reaching room temperature, TQCM verification of the chamber is done, keeping the crystal at a temperature of -10 deg C. Any residual contaminant shall get condensed on the TQCM, thus changing the crystal's resonant frequency. The rate of change of frequency gives a measure of the amount of contaminant in the chamber. For SUIT, a TQCM count of $\leq 3 Hz/hr$ over a period of 24 hours was considered satisfactory. However, $\leq 2 Hz/hr$ was achieved in practice.
-	
-	The SUIT payload was tested following vibration, acoustic and thermovacuum qualification tests. This required the payload to be transported to various clean rooms and labs. While required contamination control protocols were followed during transportation and the tests, it was considered necessary to subject the payload to a bakeout at $40 ^\circ C$ for 36 hours before cooling the CCD and beginning imaging tests. Post baking, the payload was allowed to cool down to room temperature and TQCM verification was performed. The TQCM count was seen to be $< 3 Hz/hr$ after 24 hours of verification, following which the CCD was cooled.
-	
-	\subsection{Monochromator configuration and calibration}
-	An Andor Shamrock 500i spectroscope/ monochromator is used for this purpose. An optical fiber picks up the light from the exit slit of the monochromator and feeds it to the focal plane of the SUIT collimator. The optical fiber bundle is linear in nature, with 19 fibers of 0.2mm thickness arranged in a linear array. This acts like an exit slit with a thickness of 0.2 mm. A Hg2 (Mercury) lamp is used for wavelength calibration of the monochromator. The central wavelength of a relatively isolated spectral line is set on the monochromator, and the optical fiber is mounted. The exit end of the fiber is attached to a photodiode to measure the intensity of the exiting light. Using a micrometer actuator, the input slit of the optical fiber is moved horizontally. The brightness is seen to increase and then starts decreasing, indicating the position of central wavelength. At this position, the fiber is moved vertically to ensure the light arrives at most fibers of the bundle. The brightness is seen to increase and then decrease, indicating the point of maximum brightness to be the optimized position of the fiber slit. This calibrates the fiber to pick up the same wavelength of light as is chosen in the monochromator software. Now, the monochromator is set to another fairly isolated line within the 200-400 nm band and it is noticed that the intensity of light exiting the fiber is maximum at the set position of the slit. This ensures no variation of position with wavelength for the monochromator, and the optical fiber calibration is valid throughout the working wavelength.
-	
-	\section{Photometric Calibration}
-	Photometric calibration is performed to understand the instrument response to a standard flux of incoming light. This is necessary to quantify the flux of a solar feature from the counts recorded on the SUIT CCD. In this test, an optical fiber is used to feed light from a monochromator at the focal plane of the SUIT collimator. The monochromator uses a 1200 lpmm grating with a nominal dispersion of 1.44 nm/mm. The spectral resolution of the monochromator depends on the entrance slit or the exit slit, whichever is geometrically bigger. In our case, an entrance slit width of 3 mm is used to maximize the light output from the spectrograph. Thus, the emergent monochromatic light has a wavelength band of $3\times 1.44 = 4.32 nm$. The wavelength band is chosen to accommodate the complete transmission spectrum of the narrowband science filter being tested. Light from the exit slit of the spectrograph is carried by an optical fiber. The collecting area of the fiber is slit-like, with a thickness of 200 microns. The fiber terminates as a circular bundle, which is kept at the focal plane of the SUIT collimator and acts as the target for SUIT.
+An interferometer is used with a f/3.5 transmission sphere to overfill the mirrors of SUIT. The interferometer beam is fed along the optical axis of the payload, which is retroreflected back from the collimator reference mirror. The return beam passes through the collimator optics and reaches the interferometer, which gives the  interferogram. Repeated interferograms are taken, and the fringes are constantly monitored. The interferometer is moved along the z-axis till the fringes appear straight instead of circular, indicating nullification of the power. The point of convergence of the beam from the interferometer is the focal point of the collimator. Light from any target kept at that location emerges collimated. 
+
+\subsection{Monochromator configuration and calibration}
+For the photometric and spectral calibration, it is necessary to feed collimated light of a known wavelength band and intensity in \suit.
+An Andor Shamrock 500i spectroscope/ monochromator is used with an optical fiber to feed light at the focal plane of the \suit collimator. The optical fiber bundle is linear in nature, with 19 fibers of 0.2 mm thickness arranged in a linear array \js{Model number of optical fiber}. This behaves like an exit slit with a thickness of 0.2 mm.
+
+A Hg2 (Mercury) lamp is used for wavelength calibration of the monochromator and fiber setup. The lamp is kept at the entrance aperture and the central wavelength of a relatively isolated spectral line is set on the monochromator. The fiber face is attached to a photodiode to measure the intensity of the exiting light. Using a micrometer actuator the monochromator exit slit is moved horizontally. The brightness is seen to increase and then starts decreasing, indicating the position of central wavelength of the spectral line. At this position, the fiber is moved vertically to ensure the light arrives at most fibers of the bundle. The brightness is again seen to increase and then decrease, indicating the point of maximum brightness to be the optimized position of the fiber slit. This calibrates the fiber to pick up the same wavelength of light as is chosen in the monochromator software. Now, the monochromator is set to another fairly isolated line within the 200-400 nm band and it is noticed that the intensity of light exiting the fiber is maximum at the set position of the slit. The monochromator and fiber setup is now calibrated to deliver the required wavelength set in the monochromator. The mercury lamp is replaced with a xenon arc lamp which is focussed at the input slit of the monochromator.
+ 
+\section{Photometric Calibration}
+Photometric calibration is performed to understand the instrument response to a standard flux of incoming light. This is necessary to quantify the flux of a solar feature from the counts recorded on the SUIT CCD. In this test, an optical fiber is used to feed light from a monochromator at the focal plane of the SUIT collimator. The monochromator uses a 1200 lpmm grating with a nominal dispersion of 1.44 nm/mm. The spectral resolution of the monochromator depends on the entrance slit or the exit slit, whichever is geometrically bigger. In our case, an entrance slit width of 3 mm is used to maximize the light output from the spectrograph. Thus, the emergent monochromatic light has a wavelength band of $3\times 1.44 = 4.32 nm$. The wavelength band is chosen to accommodate the complete transmission spectrum of the narrowband science filter being tested. Light from the exit slit of the spectrograph is carried by an optical fiber. The collecting area of the fiber is slit-like, with a thickness of 200 microns. The fiber terminates as a circular bundle, which is kept at the focal plane of the SUIT collimator and acts as the target for SUIT.
 	
 	A NIST calibrated photodiode is kept at the exit aperture of the collimator. The wavelengths of the spectrograph and photodiode are set based on the science filter being tested. It is seen that the Xenon lamp spectrum does not change rapidly within 4.32 nm and can be assumed to be flat. Therefore, the output flux measured with the photodiode (in $Wm^{-2}$) can be divided by the wavelength band from the spectrograph to get the spectral flux from the collimator (in $W m^{-2} nm$). Also, the incoming wavelength band is wide enough to accommodate the entire transmission spectrum of the narrowband science filters (typically $< 1~nm$ FWHM). Therefore, the wavelength band incident from the monochromator is sufficient to perform the photometric test with the SUIT payload.
 		
 	In parallel, the SUIT telescope response has been determined based on the solar spectral irradiance and the throughput of each sub-assembly of the telescope. The experimentally determined throughput is compared with this simulated throughput to check the coherence of the experimental and simulated results. This is necessary to decide the exposure times for the SUIT payload in the 11 science bandpasses at various modes of operation.
 
- The throughput model for various \suit~science filter combinations was designed to predict the counts for a given science filter combination with a sun-as-a-star spectra. The measured wavelength responses of the components are used to estimate the counts. If the photon flux incident on the entrance aperture is given by $P(\lambda)$, then the photoelectron count read at the detector would be given by,
+ The throughput model for various \suit science filter combinations was designed to predict the counts for a given science filter combination with a sun-as-a-star spectra. The measured wavelength responses of the components are used to estimate the counts. If the photon flux incident on the entrance aperture is given by $P(\lambda)$, then the photoelectron count read at the detector would be given by,
 
  %%%%%%%%%
  \begin{equation}\label{eq1}
-     DM~=~\int~P(\lambda)~R(\lambda)~t~d\lambda
+     DN~=~\int~P(\lambda)~R(\lambda)~t~d\lambda
  \end{equation}
  %%%%%%%%%
 Where $R(\lambda)$ is the effective area for the specific filter combination and ‘t’ is the exposure time. The effective area $R(\lambda)$ is calculated by multiplying the measured instrumental response of all the optical components in the ray path. So, the filter response is given by
 
 %%%%%%%%%
  \begin{align*}
-     & R(\lambda)~=~TF(\lambda)\times PM(\lambda)\times SM(lambda)\times SF_{i}(\lambda)\times SF_{j}(\lambda)\times L(\lambda)\times QE(\lambda)\times A\\
+     & R(\lambda)~=~TF(\lambda)\times PM(\lambda)\times SM(\lambda)\times SF_{i}(\lambda)\times SF_{j}(\lambda)\times L(\lambda)\times QE(\lambda)\times A\\
      & TF(\lambda)\implies~Measured~thermal~filter~wavelength~response \\
      & PM(\lambda)\implies~Measured~primary~mirror~wavelength~response \\
      & SM(\lambda)\implies~Measured~secondary~mirror~wavelength~response \\
@@ -247,10 +248,10 @@ Where $R(\lambda)$ is the effective area for the specific filter combination and
      \item For a given filter combination we have an image recorded of the optical fiber bundle at the band central wavelength, with the measurement setup shown in figure \ref{fig:experimentalsetup}. From the background corrected optical fiber images we calculate the 99\% encircled energy radius and the total enclosed data counts ($DN_{0.99}$).
      \item The background is estimated by taking the median of dark image (optical fibers closed) pixels.
      \item The photodiode gives the measurement of corresponding input flux($E_{0.99}$) in units of $nW.m^{-2}$ for an input spectral bin of 4.32 nm. The flux is divided by the spectral bin size to get the spectral irradiance per unit area in units of $nW.m^{-2}.nm^{-1}$. The ratio of $DN_{0.99}$ and ${E_{0.99}}$ tells us about the expected counts for any given input flux, $F~=~\frac{DN_{0.99}}{E_{0.99}}$ in units of $ADC~counts.s^{-1}/(nW.m^{-2}.nm^{-1})$.
-     \item We use a composite Solstice and Solspec solar spectra as our standard for solar radiation. Using the spectra we can calculate the total energy input from Sun for the concerned filter within the wavelength extent, $E_{\odot}~=~\int_{\lambda_{}}^{\lambda_{2}}~P(\lambda)~d\lambda$, where $P(\lambda)$ is the Solstice, Solspec composite solar spectra. Here, $\lambda_{1}-\lambda_{2}$ is the extent of the concerned band.
+     \item We use a composite SOLar STelar Irradiance Comparison Experiment (SOLSTICE; 115 - 320 nm) onboard the SOlar Radiation and Climate Experiment (SORCE) \cite{rottman05,harder05,mcclintock05} satellite and SOLar SPECtrometer (SOLSPEC) \cite{thuillier09} solar spectrum as our standard for solar radiation. Using the spectra we can calculate the total energy input from Sun for the concerned filter within the wavelength extent, $E_{\odot}~=~\int_{\lambda_{}}^{\lambda_{2}}~P(\lambda)~d\lambda$, where $P(\lambda)$ is the Solstice, Solspec composite solar spectra. Here, $\lambda_{1}-\lambda_{2}$ is the extent of the concerned band.
      \item Using eqn.\ref{eq1} along with the aforementioned spectra, we can calculate the expected count observed (i.e. $DN_{throughput}~=~\int~P(\lambda)~R(\lambda)~t~d\lambda$) for a given filter combination.
      \item The ratio inferred from the measurement of the input energy measured by the photdiode, and the total counts within 99\% encircled energy radius as described for the specific filter combination, F (in units of $ADC~counts.s^{-1}/(nW.m^{-2}.nm^{-1})$) can be used to calculate the expected counts from the Sun given by $DN_{measured}~=~E_{\odot}\times~F$
-     \item In table\ref{tab:throughput} we list out the comparison between the solar counts inferred from our measurements and the counts calculated from the throughput model, for some of the filter combinations. The values are in agreement within 15\%.
+     \item In table~\ref{tab:throughput} we list out the comparison between the solar counts inferred from our measurements and the counts calculated from the throughput model, for some of the filter combinations. The values are in agreement within 15\%.
  \end{itemize}
  %%%%%%%%%%
 
@@ -302,10 +303,10 @@ the spectral calibration for that filter combination in units of $ADC~counts.s^{
 In figure \ref{fig:nb2_images} we show the captured images for the NB2 filter combination at various wavelengths. The measurement wavelength and the calculated 99\% encircled energy radius is quoted at the top of each panel.  In fig.~\ref{fig:sepc_calib} we plot the spectral calibration of various filter combinations. The x and y error bars in fig.~\ref{fig:sepc_calib} are the wavelength bins for the given input slit size, and the Poisson uncertainty of the measured ADC counts respectively.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[ht!]
+\begin{figure*}[ht]
 \begin{center}
 \begin{tabular}{c}
-\includegraphics[width=\linewidth]{nb2_images.pdf}
+\includegraphics[width=0.8\linewidth]{nb2_images.pdf}
 \end{tabular}
 \end{center}
 \caption 
@@ -314,19 +315,29 @@ In figure \ref{fig:nb2_images} we show the captured images for the NB2 filter co
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[ht!]
+\begin{figure*}[ht]
 \begin{center}
 \begin{tabular}{c}
-\includegraphics[trim={2.5cm 2.5cm 3cm 4cm},clip,width=\linewidth]{spec_calib.eps}
+\includegraphics[trim={2.5cm 2.5cm 3cm 4cm},clip,width=0.8\linewidth]{spec_calib.eps}
 \end{tabular}
 \end{center}
 \caption 
-{ \label{fig:sepc_calib} Spectral calibration for various filter combination inferred from the imaging measurements. The x errors are given by the wavelength bins for the given input slit size. The y errors are given by the Poisson uncertainty of the measured ADC counts.} 
+{ \label{fig:sepc_calib} Spectral calibration for various filter combinations inferred from the imaging measurements. The x errors are given by the wavelength bins for the given input slit size. The y errors are given by the Poisson uncertainty of the measured ADC counts.} 
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %###################################
 \section{Discussion \& Conclusion}\label{sec:conc}
+%###################################
+
+The photometric calibration and full payload spectral verification for the \suit are presented in this paper. The experimental setup consists of the payload maintained in a high vacuum environment and a collimator feeding light from a monochromator. The collimator had to have a high reflectance in UV with comparable optical quality to the payload. Therefore, the flight spare model of \suit is used to meet this purpose.
+
+Photometric calibration is essential to correlate the counts gathered on \suit CCD for a specific filter combination to the incoming solar radiation. The intensity of collimated light within a certain wavelength band is measured with a NIST calibrated photodiode and fed into the payload. The measured response of the payload is seen to agree with simulated values within a margin of 15\%. 
+
+However, the bandpasses NB1, BB1 and BB2 are below 250 nm and, therefore, get attenuated in the atmosphere. Moreover, the Xenon light source transmission is very low \sr{Maybe we should mention how low?} in these wavelengths. Thus, the data gathered has low SNR and is unreliable for performing photometry. On the other hand, the exposure time for the NB7 filter is very low \sr{Maybe we should put the table for nominal exposure time with the science filters table?} as it operates at 388 nm, which is close to UV transmission. Therefore, the photometry is unreliable for this filter due to measurement errors.
+
+For the spectral characterization, the wavelength bin of the input light is reduced, and the response is measured across the transmission bandpass of the science filters. It is seen that the spectral response of the instrument matches the central wavelengths \suit is designed to observe.
+
 %###################################
 
 %xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
